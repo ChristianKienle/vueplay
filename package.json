@@ -1,0 +1,19 @@
+{
+  "name": "@ckienle/vueplay",
+  "version": "0.1.0",
+  "description": "Create Vue playgrounds",
+  "main": "src/index.js",
+  "repository": "git@github.com:ChristianKienle/vueplay.git",
+  "author": "Christian Kienle",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "execa": "^1.0.0",
+    "ncp": "^2.0.0",
+    "open-in-editor": "^2.2.0"
+  },
+  "bin": {
+    "vueplay": "./src/cli.js"
+  }
+}
