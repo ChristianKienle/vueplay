@@ -10,5 +10,5 @@ export default {
       default: "hello world",
     }
   }
-};
+}
 </script>
