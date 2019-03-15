@@ -1,6 +1,6 @@
-const createPlayground = require("./create-playground");
+const createPlayground = require("./create-playground")
 const { error } = require("./logger");
 
 (async () => {
-  createPlayground();
-})().catch(err => error(err));
+  createPlayground()
+})().catch(err => error(err))

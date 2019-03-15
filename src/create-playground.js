@@ -1,39 +1,44 @@
-const os = require("os");
-const Path = require("path");
-const fs = require("fs");
-const createShortId = require("./create-short-id");
-const openInEditor = require("open-in-editor");
-const ncp = require('ncp').ncp;
-ncp.limit = 1;
-const execa = require('execa');
-const { success, error, log } = require("./logger");
-const editor = openInEditor.configure({
-  cmd: "code",
-  pattern: "-n {filename} "
-}, err => {
-  error('Unable to open playground using editor.');
-  error(`Underlying error: ${err}`);
-});
-
-const templatePath = Path.resolve(__dirname, "template");
+const Path = require("path")
+const fs = require("fs-extra")
+const Playground = require("./Playground")
+const { openInEditor, serve } = require("./util")
+const { error, log } = require("./logger")
+const { getConfig } = require("./config")
+const { printHelp } = require("./cli")
+const config = getConfig()
 
 module.exports = async () => {
-  const temp = os.tmpdir();
-  const dir = createShortId();
-  log(`Creating playground at ${temp}…`);
-  const playgroundRoot = Path.resolve(temp, dir);
-  fs.mkdirSync(playgroundRoot);
-  ncp(templatePath, playgroundRoot, async (err) => {
-    if (err) {
-      error('Unable to create playground.');
-      error('There was an error while copying the template to the destination directory:');
-      error(`${err}`);
-      return;
+  const { dest, name, help } = config
+  if(help) {
+    printHelp()
+    return
+  }
+  log(`✨  Creating playground in ${dest}.`)
+  const playgroundRoot = Path.resolve(dest, name)
+
+  try {
+    await fs.mkdir(playgroundRoot)
+  } catch(fsError) {
+    error("Unable to create playground.")
+    error(`Could not create directory for playground at ${playgroundRoot}`)
+    error("because a file system error occured:")
+    error(fsError)
+    return
+  }
+
+  const playground = new Playground({
+    playgroundRoot,
+    templateDirectory: config.templateDir
+  })
+
+  try {
+    await playground.create()
+    if(config.open) {
+      await openInEditor({ editor: config.editor, playgroundRoot })
     }
-    success(`Playground at ${temp} created.  🤩`);
-    log(`Opening playground using Visual Studio Code…`);
-    await editor.open(playgroundRoot);
-    log(`Starting the Vue magic…`);
-    execa('vue', ['serve'], { cwd: playgroundRoot }).stdout.pipe(process.stdout);;
-  });
-};
+    await serve(playgroundRoot)
+  } catch(err) {
+    error(err)
+    throw err
+  }
+}

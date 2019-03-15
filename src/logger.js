@@ -1,8 +1,15 @@
-const chalk = require('chalk');
-const _log = console.log;
+const chalk = require("chalk")
 
-const log = msg => _log(chalk.white.bgMagenta.bold(" vueplay ") + " " + msg);
-const error = msg => _log(chalk.white.bgRed.bold(" vueplay ") + " " + msg);
-const success = msg => _log(chalk.white.bgGreen.bold(" vueplay ") + " " + msg);
+// eslint-disable-next-line no-console
+const _log = console.log
 
-module.exports = { success, log, error };
+const log = (msg, ...params) => _log(chalk.dim("vueplay") + " " + chalk.reset(msg), ...params)
+
+// At the moment error and success do nothing special…
+const error = log
+const success = log
+
+// Raw is logging without any fancyness
+const raw = _log
+
+module.exports = { success, log, error, raw }
