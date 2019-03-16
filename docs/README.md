@@ -12,5 +12,5 @@ features:
   details: Make VuePlay your own. For example you can create a custom template and integrate VuePlay with your favorite editor.
 - title: Vue-Powered
   details: VuePlay is standing on the shoulders of giants. Under the hood, VuePlay is simply using tools you already know. Nothing is hidden away from you.
-footer: MIT Licensed | Copyright © 2019-present Christian Kienle
+footer: MIT Licensed | Copyright © 2019-present Christian Kienle | Vectors graphics designed by Freepik.com
 ---
