@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>VuePlay</title>
+    <meta name="description" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="/vueplay/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/vueplay/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/vueplay/favicon-16x16.png">
+  <link rel="manifest" href="/vueplay/site.webmanifest">
+  <link rel="mask-icon" href="/vueplay/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+    
+    <link rel="preload" href="/vueplay/assets/css/0.styles.575265bd.css" as="style"><link rel="preload" href="/vueplay/assets/js/app.25440ec4.js" as="script"><link rel="preload" href="/vueplay/assets/js/4.78dc510e.js" as="script"><link rel="prefetch" href="/vueplay/assets/js/2.a571f133.js"><link rel="prefetch" href="/vueplay/assets/js/3.618c81f7.js"><link rel="prefetch" href="/vueplay/assets/js/5.7c2cad70.js"><link rel="prefetch" href="/vueplay/assets/js/6.d19f10eb.js"><link rel="prefetch" href="/vueplay/assets/js/7.41ef9c39.js">
+    <link rel="stylesheet" href="/vueplay/assets/css/0.styles.575265bd.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><div class="content"><h1>404</h1> <blockquote>How did we get here?</blockquote> <a href="/vueplay/" class="router-link-active">Take me home.</a></div></div><div class="global-ui"></div></div>
+    <script src="/vueplay/assets/js/app.25440ec4.js" defer></script><script src="/vueplay/assets/js/4.78dc510e.js" defer></script>
+  </body>
+</html>
