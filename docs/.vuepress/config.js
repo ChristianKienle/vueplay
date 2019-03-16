@@ -1,6 +1,7 @@
 module.exports = {
   title: "VuePlay",
-  base: "/",
+  // base: "/",
+  base: "/vueplay/",
   plugins: ["@vuepress/active-header-links",
     "@vuepress/clean-urls"],
   head: [
