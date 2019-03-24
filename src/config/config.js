@@ -1,51 +1,29 @@
 // @ts-check
-const mri = require("mri")
 const { resolveName, tempDir, createShortId, templateDir } = require("./../util")
+const getCLIConfig = require("./provider/cli-args")
+const getRCConfig = require("./provider/config-file")
 
 /**
  * @typedef {object} Config
  * @prop {boolean} open
+ * @prop {boolean} help
+ * @prop {boolean} printConfig
  * @prop {string} editor
  * @prop {string} dest
  * @prop {string} name
  * @prop {string} templateDir
- *
- * @typedef {Config & {help: boolean}} CLIConfig
  */
 
 /** @type {() => Config} */
 const defaultConfig = () => ({
   editor: "code",
   open: true,
+  help: false,
+  printConfig: false,
   dest: tempDir,
   name: "${randomId}",
   templateDir: templateDir
 })
-
-/** @type {() => CLIConfig} */
-const defaultCLIConfig = () => ({
-  ...defaultConfig(),
-  help: false
-})
-
-/**
- * @param {string[]} args
- * @returns {CLIConfig}
- */
-const cliConfig = (...args) => {
-  if(args.length === 0) {
-    return defaultCLIConfig()
-  }
-  const options = mri(args, {
-    default: { ...defaultConfig(), help: false },
-    alias: {
-      templateDir: "template-dir"
-    },
-    boolean: ["open", "help"],
-    string: ["editor", "name", "dest", "templateDir"]
-  })
-  return options
-}
 
 /**
  * @param {Config} config
@@ -67,4 +45,12 @@ const resolveConfig = (config) => {
   return resolvedOptions
 }
 
-module.exports = { resolveConfig, defaultConfig, cliConfig }
+const getConfig = (...args) => {
+  const config = defaultConfig()
+  const rc = getRCConfig()
+  const cli = getCLIConfig(...args)
+  const merged = { ...config, ...rc, ...cli }
+  return merged
+}
+
+module.exports = { getConfig, resolveConfig, defaultConfig }

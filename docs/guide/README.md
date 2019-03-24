@@ -43,6 +43,7 @@ Usage: vueplay [options]
 
 Options:
 
+  --print-config  print resolved configuration, then exit
   --editor        specify editor used to open the playground (default: code)
   --no-open       do not open the playground (default: false)
   --dest          playgrounds output directory (default: temporary directory)
@@ -52,9 +53,47 @@ Options:
                   (default: ${randomId}). You can use the following placeholder:
                   ${randomId}  will be replaced by a short random id
   --help          output usage information
+
+  Options can also be specified by having a file called .vueplayrc.js in your
+  home directory. Options specified via the CLI override the optiones that are
+  also specified in the .vueplayrc.js config file.
+
+                      🦄  made by the Unicorn Syndicate 🦄
 ```
 
-### CLI Examples
+### Configuration File
+
+You can configure everything also via a config file. *VuePlay* expects a config file to be at `$HOME/.vueplayrc.js`. The config file must export a single object:
+
+**$HOME/.vueplayrc.js:**
+```js
+module.exports = {
+  dest: "/tmp"
+}
+```
+
+This config has the same effect as the `--dest`-option: It specifies the destination directory of playgrounds that are created by *VuePlay*.
+
+All keys are optional. If not specified the default value is used. A full configuration file looks like this:
+
+**$HOME/.vueplayrc.js:**
+```js
+module.exports = {
+  dest: "/tmp",
+  printConfig: false,
+  help: false,
+  editor: "code",
+  open: true,
+  templateDir: "/my/template",
+  name: "${randomId}"
+}
+```
+
+### Configuration Merging
+
+You can configure *VuePlay* by using command line options or a configuration file. Command line options always override options specified in the configuration file.
+
+### Examples
 
 #### Default Playground
 

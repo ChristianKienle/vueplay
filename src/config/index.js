@@ -1,9 +1,7 @@
-const { resolveConfig, cliConfig } = require("./config")
+const { resolveConfig, getConfig } = require("./config")
 
-const getConfig = () => {
+module.exports = () => {
   const args = process.argv.slice(2)
-  const config = cliConfig(...args)
+  const config = getConfig(...args)
   return resolveConfig(config)
 }
-
-module.exports = { getConfig }

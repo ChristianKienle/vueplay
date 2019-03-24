@@ -1,6 +1,6 @@
 {
   "name": "@ckienle/vueplay",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "engines": {
     "node": ">=10.0.0"
   },
@@ -35,7 +35,8 @@
     "lint": "eslint --ignore-pattern './template/**' --config .eslintrc.js ./src",
     "test": "jest --config jest.config.js --runInBand",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "start": "node src/index"
   },
   "files": [
     "src/**/*.js",

@@ -3,12 +3,17 @@ const fs = require("fs-extra")
 const Playground = require("./Playground")
 const { openInEditor, serve } = require("./util")
 const { error, log } = require("./logger")
-const { getConfig } = require("./config")
+const getConfig = require("./config")
 const { printHelp } = require("./cli")
 const config = getConfig()
 
 module.exports = async () => {
-  const { dest, name, help } = config
+  const { printConfig, dest, name, help } = config
+  if(printConfig) {
+    log("⚙️  Configuration:")
+    log(JSON.stringify(config))
+    return
+  }
   if(help) {
     printHelp()
     return

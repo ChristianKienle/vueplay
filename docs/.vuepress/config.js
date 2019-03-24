@@ -1,7 +1,8 @@
 module.exports = {
   title: "VuePlay",
   base: "/vueplay/",
-  plugins: ["@vuepress/active-header-links",
+  plugins: [
+    "@vuepress/active-header-links",
     "@vuepress/clean-urls"],
   head: [
     ['link', {rel: 'apple-touch-icon', sizes: "180x180", href: '/apple-touch-icon.png'}],
@@ -18,6 +19,7 @@ module.exports = {
     nav: [
       {text: 'Home', link: '/'},
       {text: 'Guide', link: '/guide/'},
+      {text: 'GitHub', link: 'https://github.com/ChristianKienle/vueplay'},
     ],
     repo: 'ChristianKienle/vueplay',
     repoLabel: 'Contribute!',
