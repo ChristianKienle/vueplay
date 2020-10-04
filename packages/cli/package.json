@@ -1,0 +1,59 @@
+{
+  "name": "@vueplay/cli",
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "Christian Kienle <christian.kienle@sap.com>",
+  "homepage": "https://github.com/ChristianKienle/vueplay#readme",
+  "license": "ISC",
+  "bin": {
+    "vueplay": "./lib/cli/main.js"
+  },
+  "engines": {
+    "node": ">=11.14.0"
+  },
+  "main": "lib/index.js",
+  "directories": {
+    "template": "template",
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "@vueplay/log": "^0.1.0",
+    "@vueplay/vue2": "^0.1.0",
+    "@vueplay/vue3": "^0.1.0",
+    "fs-extra": "^9.0.1",
+    "ncp": "^2.0.0",
+    "open-in-editor": "^2.2.0",
+    "yargs": "^16.0.3",
+    "ejs": "^3.1.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-plugin-jest": "^24.0.2",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^26.4.2",
+    "@types/jest": "^26.0.14",
+    "@types/yargs": "^15.0.7"
+
+  },
+  "files": [
+    "lib",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristianKienle/vueplay.git"
+  },
+  "scripts": {
+    "lint": "eslint --ignore-pattern './template/**' --config .eslintrc.js ./lib",
+    "test": "jest --config jest.config.js --runInBand"
+    },
+  "bugs": {
+    "url": "https://github.com/ChristianKienle/vueplay/issues"
+  }
+}

@@ -1,9 +1,0 @@
-{
-  "name": "vue-playground-instance",
-  "version": "1.0.0",
-  "description": "This is a Vue playground - created by vueplay.",
-  "main": "main.js",
-  "scripts": {
-    "start": "vue serve main.js"
-  }
-}

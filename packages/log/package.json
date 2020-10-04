@@ -1,0 +1,33 @@
+{
+  "name": "@vueplay/log",
+  "version": "0.1.0",
+  "description": "> TODO: description",
+  "author": "Christian Kienle <christian.kienle@sap.com>",
+  "homepage": "https://github.com/ChristianKienle/vueplay#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.0"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristianKienle/vueplay.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/ChristianKienle/vueplay/issues"
+  }
+}
