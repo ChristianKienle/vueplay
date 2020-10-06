@@ -14,6 +14,7 @@
     "lib"
   ],
   "dependencies": {
+    "vue-template-compiler": "^2.6.12",
     "@vue/cli-plugin-babel": "^4.5.0",
     "@vue/cli-plugin-eslint": "^4.5.0",
     "@vue/cli-service": "^4.5.0",
