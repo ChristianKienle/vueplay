@@ -1,6 +1,6 @@
 {
   "eslint.enable": true,
-  "debug.node.autoAttach": "on",
+  "debug.node.autoAttach": "off",
   "eslint.format.enable": true,
   "debug.javascript.usePreview": false
 }
