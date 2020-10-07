@@ -34,7 +34,7 @@ module.exports = function createConfigPlugin (context) {
           // ```
           // The files references above (vue.esm.js, …) do no longer exist in
           // v3. For now we simply use index.js.
-          const aliasTarget =  `${vuePath}/index.js`
+          const aliasTarget =  `${vuePath}/dist/vue.runtime.esm-bundler.js`
           config.resolve.alias
             .set("vue$",aliasTarget)
         }
