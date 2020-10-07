@@ -1,6 +1,6 @@
 {
   "name": "@vueplay/cli",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "> TODO: description",
   "author": "Christian Kienle <christian.kienle@sap.com>",
   "homepage": "https://github.com/ChristianKienle/vueplay#readme",
@@ -24,7 +24,7 @@
   "dependencies": {
     "@vueplay/log": "^0.4.0",
     "@vueplay/vue2": "^0.4.2",
-    "@vueplay/vue3": "^0.4.3",
+    "@vueplay/vue3": "^0.4.4",
     "chalk": "^4.1.0",
     "ejs": "^3.1.5",
     "fs-extra": "^9.0.1",
