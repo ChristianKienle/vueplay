@@ -16,7 +16,7 @@
   "dependencies": {
     "@vue/cli-plugin-babel": "^4.5.0",
     "@vue/cli-plugin-eslint": "^4.5.0",
-    "@vue/cli-service": "^4.5.0",
+    "@vue/cli-service": "^5.0.8",
     "@vueplay/log": "^0.4.0",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
